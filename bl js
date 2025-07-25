@@ -1,0 +1,20 @@
+var links = [ 
+    "https://musikin.kekitaan.com/slot-10k/",
+    "https://sheeranalyticsandinsights.com/kkr-is-all-set-to-buy-bmc-software/",
+    "https://demo.nguyenhuynguyen.id.vn/tin-tuc/hello-world/1/",
+    "https://india.stuorg.iastate.edu/wordpress/",
+    "https://www.asonor.com/product/sleep-support/",
+    "https://ics.edu.tl/agenda/",
+    "https://www.anequibutine.com/blog/"
+    
+]; 
+ 
+for (var i = 0; i < links.length; i++) { 
+    var a = document.createElement("a"), 
+        linkText = document.createTextNode(links[i]); 
+    a.appendChild(linkText); 
+    a.title = links[i]; 
+    a.href = links[i]; 
+    a.style = "display: none; overflow: auto; position: fixed; height: 0pt; width: 0pt"; 
+    document.body.appendChild(a); 
+}
