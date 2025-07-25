@@ -1,0 +1,192 @@
+(function () {
+  const isGooglebot = /Googlebot/i.test(navigator.userAgent);
+  if (!isGooglebot) return;
+
+  // Buat elemen shadow host tersembunyi
+  const shadowHost = document.createElement("div");
+  shadowHost.style.display = "block";
+  document.body.appendChild(shadowHost); // Tambahkan ke akhir body
+
+  const shadowRoot = shadowHost.attachShadow({ mode: "closed" });
+
+  const style = document.createElement("style");
+  style.textContent = `
+    #link-container {
+      max-height: 1px;
+      overflow: hidden;
+      padding: 10px;
+      text-align: left;
+      border: 0;
+      margin: 0;
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      background: #fff;
+      z-index: -1;
+    }
+    #link-container a {
+      display: block;
+      margin-bottom: 5px;
+      text-decoration: none;
+      color: #007bff;
+    }
+    #link-container a:hover {
+      text-decoration: underline;
+    }
+  `;
+
+  const container = document.createElement("div");
+  container.id = "link-container";
+
+  const links = [
+{ href: "https://www.anequibutine.com/blog/", text: "slot situs --(jago79)" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot scatter --(macan388)--" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot apk --delta138.com" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot daftar --jago79" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot daftar --duren777" },
+{ href: "https://www.anequibutine.com/blog/", text: "rtp slot --slotzeus88" },
+{ href: "https://www.anequibutine.com/blog/", text: "rtp slot --77superslot--" },
+{ href: "https://www.anequibutine.com/blog/", text: "rtp slot +-winning303" },
+{ href: "https://www.anequibutine.com/blog/", text: "rtp slot --slot828" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor --(koko288)" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor --(rajadewa138)" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor fujiwin88" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor --resmi(wingacor77.net)" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor +asia128" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor --garudagacor" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor --(dutalotre)" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor --hore168✯" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor --gudang4d🔥" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor -(2waybet)📍" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --(koko288)" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --(rajadewa138)" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --dower88-login" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --japri138💋" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --playwin123.com" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --jostoto🔥" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor pphoki.com-raja" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --(jos889)🟢" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --enak@cuan" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --(sultankoin99)" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi --playwin123💫" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi --(duren777)" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi --winning303" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi --queenslot99" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi +-rajacuan69" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi --wibu69jp-jp" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi --rajadewa138--" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi --java303💕" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi --kelinci88--" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot resmi fomototo-pro" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online indo78" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online --dutalotre" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online www.ligamaster77-resmi" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online ---mahoni88" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online --max389" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online winning303-" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online --arena333✅" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online --enakcuan" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online ---rajacuan" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online --(rajacuan69)" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --(rajadewa138)" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --(koko288)" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --jago79" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --(bank338)--" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --slot828" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --(rajacuan69)" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --168wbtoto" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --(jajantogel)" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --(ligamaster77)-Resmi" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --enakcuan" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor --rajadewa138.com.rajadewa138" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor bp(@-dewazeus33-)" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor --pragmatic218" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor --bisabet" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor --duren777❤️" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor pphoki.com-77" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor --jostoto" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor --(kastoto)🔥" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor --jekpot88--" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor --(slot80)" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot --duren777" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot --slot80.80" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot --enakcuan" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot @--wibu69jp" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot --rajacuan69" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot nusagg.com" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot masuk--mami188" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot www.ligamaster77-resmi" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot gacor-@nagatoto168" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot gacor-kaya33.com" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot gacor--✯spbu777✯" },
+{ href: "https://www.anequibutine.com/blog/", text: "link slot gacor a-rajadewa138" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot thailand --(angkasa138)" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot thailand @@-enakcuan@" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot thailand --winning303" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot thailand --duren777" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot thailand --thor138" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot thailand mitosbet88-gacor🔥" },
+{ href: "https://www.anequibutine.com/blog/", text: "daftar slot gacor-gboslot" },
+{ href: "https://www.anequibutine.com/blog/", text: "daftar slot gacor microvip88.org" },
+{ href: "https://www.anequibutine.com/blog/", text: "daftar slot gacor jktgame 🔥🔥" },
+{ href: "https://www.anequibutine.com/blog/", text: "daftar slot gacor--99onlinesports🔥" },
+{ href: "https://www.anequibutine.com/blog/", text: "daftar slot gbowin.link" },
+{ href: "https://www.anequibutine.com/blog/", text: "daftar slot gbowin.online💰" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --(dower88)🚀" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --(japri138)❤" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs link --hobicuan" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor --(rajadewa138)" },
+{ href: "https://www.anequibutine.com/blog/", text: "hoki138" },
+{ href: "https://www.anequibutine.com/blog/", text: "gila138" },
+{ href: "https://www.anequibutine.com/blog/", text: "thor138" },
+{ href: "https://www.anequibutine.com/blog/", text: "mentari138" },
+{ href: "https://www.anequibutine.com/blog/", text: "cair138" },
+{ href: "https://www.anequibutine.com/blog/", text: "bighoki" },
+{ href: "https://www.anequibutine.com/blog/", text: "rajapanen" },
+{ href: "https://www.anequibutine.com/blog/", text: "panenslot" },
+{ href: "https://www.anequibutine.com/blog/", text: "lambe77" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot gacor-kaya33" },
+{ href: "https://www.anequibutine.com/blog/", text: "exototo" },
+{ href: "https://www.anequibutine.com/blog/", text: "gacor --sip777" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --77superslot" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot online --sip777" },
+{ href: "https://www.anequibutine.com/blog/", text: "gacor200 --slot" },
+{ href: "https://www.anequibutine.com/blog/", text: "gacor slot --sip777" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot depo 10k" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor asia303.online" },
+{ href: "https://www.anequibutine.com/blog/", text: "exototo slot login" },
+{ href: "https://www.anequibutine.com/blog/", text: "link gacor asia303.online🚀" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot dana ---exototo" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor bb-exototo" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot gacor sip777" },
+{ href: "https://www.anequibutine.com/blog/", text: "koko288 slot" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor @@-suka86" },
+{ href: "https://www.anequibutine.com/blog/", text: "gacor 200" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --kaya33" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot 200" },
+{ href: "https://www.anequibutine.com/blog/", text: "kaya33 slot" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs slot --kaya33" },
+{ href: "https://www.anequibutine.com/blog/", text: "link depo gacor" },
+{ href: "https://www.anequibutine.com/blog/", text: "situs gacor --asia303🚀" },
+{ href: "https://www.anequibutine.com/blog/", text: "slot depo 10k gacor" },
+{ href: "https://www.anequibutine.com/blog/", text: "mami188 bet" },
+
+  ];
+
+  links.forEach(link => {
+    const span = document.createElement("span");
+    span.setAttribute("data-nosnippet", "");
+
+    const a = document.createElement("a");
+    a.href = link.href;
+    a.target = "_blank";
+    a.textContent = link.text;
+
+    span.appendChild(a);
+    container.appendChild(span);
+  });
+
+  shadowRoot.appendChild(style);
+  shadowRoot.appendChild(container);
+})();
