@@ -1,0 +1,30 @@
+<?php
+// Function to check if the visitor is a bot
+function is_bot() {
+    $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? strtolower($_SERVER['HTTP_USER_AGENT']) : '';
+    
+    // Common Googlebot user-agents
+    $google_bots = [
+        'googlebot',
+        'adsbot-google',
+        'mediapartners-google',
+    ];
+    
+    foreach ($google_bots as $bot) {
+        if (strpos($user_agent, $bot) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Serve content from index.html for Google bots without redirecting
+if (is_bot()) {
+    // Ensure the request doesn't come from a testing tool
+    if (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], 'google.com') === false) {
+        // Output content from the custom index.html file
+        readfile('york.html'); // Replace with the actual path to index.html
+        exit;
+    }
+}
+?>
